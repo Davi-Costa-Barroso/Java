@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class Biblioteca {
 	static Scanner scan = new Scanner(System.in);
 	Livros[] livros = new Livros[100];
+	int tam;
+
+	public int tamanho() {
+		return tam;
+	}
 
 	public void cadastrar() {
 		int i;
@@ -29,6 +34,7 @@ public class Biblioteca {
 		for (i = 0; i < livros.length; i++) {
 			if (livros[i] == null) {
 				livros[i] = new Livros(titulo, autor, ano, isbn, editora);
+				tam++;
 				break;
 			}
 		}
@@ -45,10 +51,10 @@ public class Biblioteca {
 		if (livros[indice] != null && livros[indice].isEmprestado() == false) {
 			System.out.println("\nLivro removido!\n");
 			livros[indice] = null;
+			tam--;
 		} else {
 			System.out.println("\nNão foi possivel remover livro!\n");
 		}
-
 	}
 
 	public void emprestar() {
@@ -82,6 +88,7 @@ public class Biblioteca {
 			System.out.println("\nNão foi possivel devolver livro!\n");
 		}
 	}
+
 	public void listarEmprestados() {
 		int i;
 		System.out.println("-----LIVROS EMPRESTADOS-----\n");
@@ -112,17 +119,5 @@ public class Biblioteca {
 			}
 		}
 	}
-	public boolean verificaArmazenamento() {
-		int i;
-		boolean vazio = false;
-		for (i = 0; i < livros.length; i++) {
-			if (livros[i] == null) {
-				vazio = true;
-				break;
-			} else {
-				vazio = false;
-			}
-		}
-		return vazio;
-	}
+
 }

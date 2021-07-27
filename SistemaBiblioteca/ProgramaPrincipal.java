@@ -20,7 +20,6 @@ public class ProgramaPrincipal {
 	public static void main(String[] args) {
 		Biblioteca biblioteca1 = new Biblioteca();
 		int opcao = 0;
-		boolean vazio = true;
 		while (opcao != 7) {
 			menu();
 			System.out.println("Opção:");
@@ -29,8 +28,7 @@ public class ProgramaPrincipal {
 
 			switch (opcao) {
 			case 1:
-				vazio = biblioteca1.verificaArmazenamento();
-				if (vazio) {
+				if (biblioteca1.tamanho() < 100) {
 					biblioteca1.cadastrar();
 				} else {
 					System.out.println("Biblioteca cheia");

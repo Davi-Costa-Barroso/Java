@@ -1,4 +1,3 @@
-package ExerciciosRecursivos;
 //DAVI COSTA BARROSO
 public class SomaMultPotencia {
 	public static int somar(int a, int b) {
@@ -26,6 +25,5 @@ public class SomaMultPotencia {
 		System.out.println("Soma: " + s);
 		System.out.println("Multiplicação: " + m);
 		System.out.println("Potenciação: " + p);
-
 	}
 }

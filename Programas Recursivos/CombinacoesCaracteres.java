@@ -23,10 +23,7 @@ public class CombinacaoNCaracteres {
 	public static ArrayList<String> combinacoes(ArrayList<String> caracteres) {
 		ArrayList<String> retorno = new ArrayList<>();
 
-		if (caracteres.size() == 1) {
-			return caracteres;
-		}
-
+		if (caracteres.size() == 1) return caracteres;
 		for (int i = 0; i < caracteres.size(); i++) {
 			String pre = caracteres.get(i); // Salva o prefixo
 			caracteres.remove(i); // Remove o prefixo

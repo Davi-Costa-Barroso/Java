@@ -17,4 +17,13 @@ public class Arvore {
 		if (raiz == null) raiz = novo;
 		else raiz.inserir(novo.getDado());
 	}
+	
+	public int profundidade() {
+		if(raiz == null) return 0;
+		else return raiz.profundidade();
+	}
+	
+	public boolean balanceada() {
+		return raiz.balanceada();
+	}
 }

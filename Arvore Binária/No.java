@@ -4,6 +4,7 @@ public class No {
 	private int dado;
 	private No esquerdo;
 	private No direito;
+	int profundidade=1;
 
 	public No (int dado) {
 		this.dado = dado;
@@ -27,6 +28,19 @@ public class No {
 			if(direito == null) direito = new No(valor);
 			else direito.inserir(valor);
 		}
+		//Memorizar profundidade
+		if(esquerdo == null) profundidade = direito.profundidade()+1;
+		else if(direito == null) profundidade = esquerdo.profundidade()+1;
+		else profundidade = Math.max(direito.profundidade(), esquerdo.profundidade())+1;
+		
+	}
+	
+	public boolean balanceada() {
+		if(esquerdo == null && direito == null) return true;
+		else if(direito == null && esquerdo.profundidade < 2) return false;
+		else if(esquerdo == null && direito.profundidade < 2) return false;
+		else if(Math.abs(direito.profundidade - esquerdo.profundidade) < 2) return true;
+		else return false;
 	}
 	
 	public No buscar(int valor) {
@@ -40,6 +54,15 @@ public class No {
 			else return direito.buscar(valor);
 		}
 	}
+	
+	public int profundidade() {
+//		if(esquerdo == null && direito == null) return 1;
+//		if(esquerdo == null) return direito.profundidade()+1;
+//		if(direito == null) return esquerdo.profundidade()+1;
+//		return Math.max(direito.profundidade(), esquerdo.profundidade())+1;
+		return profundidade;
+	}
+	
 	
 	public int getDado() {
 		return dado;

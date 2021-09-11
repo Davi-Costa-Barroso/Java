@@ -6,18 +6,17 @@ public class Main {
 		Arvore arvore = new Arvore();
 		System.out.println("Arvore:");
 
-		arvore.inserir(50);
-		arvore.inserir(30);
-		arvore.inserir(70);
-		arvore.inserir(25);
-		arvore.inserir(75);
-		arvore.inserir(28);
+		arvore.inserir(27);
+		arvore.inserir(10);
+		arvore.inserir(49);
+		arvore.inserir(8);
+		arvore.inserir(15);
+		arvore.inserir(67);
+		arvore.inserir(59);
 		
 		System.out.println("---------------");
 		arvore.imprimir();
 		System.out.println("-----------------");
 		System.out.println("profundidade: "+ arvore.profundidade());
-//		System.out.println("Balanceada: "+ arvore.balanceado());
-//		System.out.println(arvore.buscar(6).getDado());
 	}
 }

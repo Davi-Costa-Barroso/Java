@@ -14,7 +14,6 @@ public class No {
 	}
 
 	public void imprimir() {
-		//Em ordem
 		System.out.println(getDado());
 		if (esquerdo != null) esquerdo.imprimir();
 		if (direito != null)  direito.imprimir();
